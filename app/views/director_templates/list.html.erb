@@ -1,0 +1,24 @@
+<h1>List of directors</h1>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Dob</th>
+    <th></th>
+  </tr>
+
+  <% Director.all.each do |this_director| %>
+    <tr>
+      <td><%= this_director.id %></td>
+      <td>
+        <img src = "<%= this_director.image %>" width = "400">
+      </td>
+      <td><%= this_director.name %></td>
+      <td><%= this_director.dob %></td>
+      <td><a href = "/directors/<%= this_director.id %>">Show details</a></td> 
+    </tr>
+  <% end %>
+
+</table>
